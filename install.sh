@@ -38,18 +38,13 @@ apt upgrade -y
 
 echo -e "${YELLOW}[2/10] Installing Dependencies...${RESET}"
 
-apt install -y \
-apache2 \
-wget \
-curl \
-tar \
-unzip \
-git \
-cron \
-awscli \
-apt-transport-https \
-software-properties-common \
-gpg
+sudo apt install unzip curl -y
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+unzip awscliv2.zip
+
+sudo ./aws/install
 
 #############################################
 # Install Apache
