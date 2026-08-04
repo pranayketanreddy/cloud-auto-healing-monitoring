@@ -42,3 +42,26 @@ If Apache is down, restart automatically
      |
      v
 Write result to log file
+
+
+**AWS SNS Notification**
+
+Whenever Apache is restarted automatically, the script publishes a message to an AWS SNS Topic.
+
+SNS sends an email notification to all confirmed subscribers.
+
+**Flow**
+
+Apache Stops
+↓
+Cron Job
+↓
+Auto Healing Script
+↓
+Restart Apache
+↓
+AWS CLI
+↓
+SNS Topic
+↓
+Email Notification
