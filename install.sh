@@ -51,6 +51,7 @@ sudo ./aws/install
 #############################################
 
 echo -e "${YELLOW}[3/10] Installing Apache...${RESET}"
+apt install -y apache2 wget tar curl apt-transport-https software-properties-common gpg cron
 
 systemctl enable apache2
 systemctl start apache2
